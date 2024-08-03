@@ -1,12 +1,13 @@
 import jieba
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-
+# reference_sentence='人工标注'
+# hypothesis_sentence='机器生成'
 def calculate_bleu_scores(reference_sentence, hypothesis_sentence):
     """
     Calculate BLEU-1, BLEU-2, BLEU-3, and BLEU-4 scores.
 
-    :param reference: List of reference sentences (each sentence is a list of words)
-    :param hypothesis: List of hypothesis words
+    :param reference: String of reference sentences
+    :param hypothesis: String of hypothesis words
     :return: Dictionary with BLEU scores
     """
     reference_words = list(jieba.cut(reference_sentence))
